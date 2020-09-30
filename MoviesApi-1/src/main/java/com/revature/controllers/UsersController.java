@@ -35,6 +35,9 @@ public class UsersController {
 	@Autowired
 	public UsersController(UsersService us) {
 		this.us = us;
+		us.saveNewUser(new Users(0, "Alec", "password", "Alec", "Batson", "Admin"));
+		us.saveNewUser(new Users(0, "Henry", "password", "Henry", "Salazar", "User"));
+		us.saveNewUser(new Users(0, "Ivanna", "password", "Ivanna", "Mahabir", "User"));
 	}
 
 	@GetMapping//this is going to match GET on path /users

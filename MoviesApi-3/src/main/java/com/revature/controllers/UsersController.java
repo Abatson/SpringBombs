@@ -35,6 +35,9 @@ public class UsersController {
 	@Autowired
 	public UsersController(UsersService us) {
 		this.us = us;
+		us.saveNewUser(new Users(0, "Alec", "password", "Alec", "Batson", "Admin"));
+		us.saveNewUser(new Users(0, "Henry", "password", "Henry", "Salazar", "User"));
+		us.saveNewUser(new Users(0, "Ivanna", "password", "Ivanna", "Mahabir", "User"));
 	}
 
 	@GetMapping//this is going to match GET on path /users
@@ -45,14 +48,14 @@ public class UsersController {
 	}
 	
 	@PostMapping// this matches post key word
-	public ResponseEntity<Users> saveNewUser(@RequestBody Users u){// will try and turn the body into the object type on its right
+	public ResponseEntity saveNewUser(@RequestBody Users u){// will try and turn the body into the object type on its right
 		if(u.getUserId() != 0) {
 			return new ResponseEntity("userId must be 0", HttpStatus.BAD_REQUEST);
 		}
-		return new ResponseEntity<Users>(us.saveNewUser(u), HttpStatus.CREATED);
+		return new ResponseEntity(HttpStatus.CREATED);
 	}
 	
-	@GetMapping("{id}")// how to do pathvariables in spring
+	@GetMapping("id")// how to do pathvariables in spring
 	public ResponseEntity<Users> getUserById(@PathVariable int id){
 		if(id == 0) {
 			return new ResponseEntity("Id must not be 0", HttpStatus.BAD_REQUEST);

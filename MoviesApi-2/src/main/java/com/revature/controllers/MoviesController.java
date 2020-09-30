@@ -26,6 +26,9 @@ public class MoviesController {
 	@Autowired
 	public MoviesController(MoviesService ms) {
 		this.ms = ms;
+		ms.saveNewMovie(new Movies(0, "Hot Fuzz", 9.8, 108));
+		ms.saveNewMovie(new Movies(0, "Serenity", 9.6, 125));
+		ms.saveNewMovie(new Movies(0, "Hot Rod", 9.7, 101));
 	}
 	
 	

@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.revature</groupId>
-	<artifactId>MoviesApi</artifactId>
+	<artifactId>MoviesApi-5</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>MoviesApi</name>
+	<name>MoviesApi-5</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -36,8 +36,8 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>

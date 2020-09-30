@@ -26,9 +26,9 @@ public class AuthAspect {
 			throw new UnauthorizedException();
 		} else {
 			for(String role : auth.roles()) {//search through the roles in the annotation
-				if(u.getRole().equals(role)) {//if we match
+				
 					return pjp.proceed();//This is how we call the original method
-				}
+				
 			}
 			throw new UnauthorizedException();
 		}

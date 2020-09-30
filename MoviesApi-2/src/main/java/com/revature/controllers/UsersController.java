@@ -46,9 +46,7 @@ public class UsersController {
 	
 	@PostMapping// this matches post key word
 	public ResponseEntity<Users> saveNewUser(@RequestBody Users u){// will try and turn the body into the object type on its right
-		if(u.getUserId() != 0) {
-			return new ResponseEntity("userId must be 0", HttpStatus.BAD_REQUEST);
-		}
+		
 		return new ResponseEntity<Users>(us.saveNewUser(u), HttpStatus.CREATED);
 	}
 	
@@ -63,9 +61,7 @@ public class UsersController {
 	@Auth(roles = {"Admin"})
 	@PatchMapping
 	public ResponseEntity<Users> updateUser(@RequestBody Users u){// will try and turn the body into the object type on its right
-		if(u.getUserId() == 0) {
-			return new ResponseEntity("userId must not be 0", HttpStatus.BAD_REQUEST);
-		}
+		
 		return new ResponseEntity<Users>(us.updateUser(u), HttpStatus.CREATED);
 	}
 	

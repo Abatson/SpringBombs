@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.revature.daos.UsersDao;
 import com.revature.models.Users;
 
-@Service
+
 public class UsersServiceImpl implements UsersService{
 	
 	private UsersDao ud;
