@@ -1,7 +1,7 @@
-##Bomb - 1
+## Bomb - 1
 
-###Problem
+### Problem
 The server will not start
 
-###Goal
+### Goal
 make the server start
